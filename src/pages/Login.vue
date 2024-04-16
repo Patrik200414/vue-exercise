@@ -13,6 +13,8 @@
 </template>
 
 <script>
+const localStorageKey = import.meta.env.VITE_USER;
+
 export default {
     name: 'Login',
     data(){
@@ -30,7 +32,7 @@ export default {
             }
 
 
-            localStorage.setItem('USER_TOKEN', JSON.stringify(userToken));
+            localStorage.setItem(localStorageKey, JSON.stringify(userToken));
             this.$router.push('/dashboard');
         }
     }

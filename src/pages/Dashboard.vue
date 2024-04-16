@@ -5,6 +5,7 @@
 
 <script>
 import UserTable from '../components/UserTable.vue';
+const localStorageKey = import.meta.env.VITE_USER;
 
 export default{
     name: 'Dashboard',
@@ -18,7 +19,7 @@ export default{
     },
     methods: {
         getUser(){
-            const userData = JSON.parse(localStorage.getItem('USER_TOKEN'));
+            const userData = JSON.parse(localStorage.getItem(localStorageKey));
             if(userData){
                 this.user = userData;
             } else{
@@ -26,7 +27,7 @@ export default{
             }
         },
         handleLogout(){
-            localStorage.removeItem('USER_TOKEN');
+            localStorage.removeItem(localStorageKey);
             this.$router.push('/')
         }
     },
