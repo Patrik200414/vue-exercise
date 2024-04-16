@@ -1,10 +1,28 @@
 <template>
+  <Header :language="language" :onLanguageChange="handleChangeLanguage"></Header>
   <RouterView></RouterView>
 </template>
 
 <script>
+import Header from './components/language/Header.vue';
+
+import language from './language.json';
+
 export default{
-  name: 'App'
+  name: 'App',
+  data(){
+    return {
+      language: 'en',
+    }
+  },
+  methods: {
+    handleChangeLanguage(event){
+      this.language = event.target.value
+    }
+  },
+  components: {
+    Header: Header
+  }
 }
 </script>
 

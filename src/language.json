@@ -1,0 +1,4 @@
+{
+    "hu": ["Email cím", "Jelszó", "Bejelentkezés", "Token", "Kijelentkezés"],
+    "en": ["Email address", "Password", "Login", "Token", "Logout"]
+}
