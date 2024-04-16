@@ -1,40 +1,24 @@
 <template>
-    <form @submit.prevent="handleSubmit">
-        <div class="form-group">
-            <label for="emailInput">Email address: </label>
-            <input type="email" class="form-control" id="emailInput" placeholder="Enter address" required v-model="email">
+    <div class="column">
+        <div class="p-3 justify-center d-flex justify-content-center">
+            <Form :localStorageKey="localStorageKey"></Form>
         </div>
-        <div class="form-group">
-            <label for="passwordInput">Password: </label>
-            <input type="password" class="form-control" id="passwordInput" placeholder="Password" required v-model="password">
-        </div>
-        <button class="btn btn-primary">Login</button>
-    </form>
+    </div>
+    
 </template>
 
 <script>
-const localStorageKey = import.meta.env.VITE_USER;
+import Form from '../components/login/Form.vue';
 
 export default {
     name: 'Login',
     data(){
-        return {
-            email: '',
-            password: ''
+        return{
+            localStorageKey: import.meta.env.VITE_USER,
         }
     },
-    methods: {
-        handleSubmit(){
-            const userToken = {
-                email: this.email,
-                password: this.password,
-                token: 'SpjcYz8xQyY7w9Jz-DRU'
-            }
-
-
-            localStorage.setItem(localStorageKey, JSON.stringify(userToken));
-            this.$router.push('/dashboard');
-        }
+    components: {
+        Form: Form
     }
 }
 </script>
