@@ -1,10 +1,11 @@
 <template>
     <div class="column">
-        <select class="form-select" :value="language" @change="onLanguageChange">
-            <option value="en">EN</option>
-            <option value="hu">HU</option>
-        </select>
-
+        <header>
+            <select class="form-select" :value="language" @change="onLanguageChange">
+                <option value="en">EN</option>
+                <option value="hu">HU</option>
+            </select>
+        </header>
     </div>
 </template>
 
