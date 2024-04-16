@@ -6,7 +6,7 @@
 <script>
 import Header from './components/language/Header.vue';
 
-import language from './language.json';
+import language from './assets/language.json';
 
 export default{
   name: 'App',
