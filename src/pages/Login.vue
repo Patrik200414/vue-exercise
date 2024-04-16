@@ -31,7 +31,7 @@ export default {
 
 
             localStorage.setItem('USER_TOKEN', JSON.stringify(userToken));
-            this.$route.push('/dashboard');
+            this.$router.push('/dashboard');
         }
     }
 }
