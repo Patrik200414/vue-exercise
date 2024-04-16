@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import TableRow from './TableRow.vue';
+import TableRow from './dashboard/TableRow.vue';
 
 export default{
     name: 'UserTable',
