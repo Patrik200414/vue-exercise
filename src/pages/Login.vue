@@ -23,8 +23,15 @@ export default {
     },
     methods: {
         handleSubmit(){
-            console.log(this.email);
-            console.log(this.password);
+            const userToken = {
+                email: this.email,
+                password: this.password,
+                token: 'SpjcYz8xQyY7w9Jz-DRU'
+            }
+
+
+            localStorage.setItem('USER_TOKEN', JSON.stringify(userToken));
+            this.$route.push('/dashboard');
         }
     }
 }
